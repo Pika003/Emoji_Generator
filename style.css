@@ -1,0 +1,138 @@
+:root {
+    --TextColor: #00C9A7;
+    --BColor: #FBEAFF;
+    --LColor: #4B4453;
+    --ListColor: #FFC75F;
+    --Other: #000;
+}  
+.switch {
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    right: 0;
+    margin: 30px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 25px;
+    width: 25px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--Other);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+input:checked + .slider {
+    background-color: var(--TextColor);
+}
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--TextColor);
+}
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    transition: background-color 0.5s ease;
+}
+h2{
+    color: var(--TextColor);
+    position: absolute;
+    top: 30px;
+    left: 40%;
+}
+p{
+    color: var(--TextColor);
+    position: absolute;
+    bottom: 100px;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background: var(--BColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#left,#right,#option{
+    width: 80%; 
+    max-width: 400px;
+    position: relative;
+    height: 400px;
+    margin: 20px;
+    border: 2px dashed var(--Other);
+    overflow: scroll;
+}
+.list{
+    background-color: var(--ListColor);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px;
+    color: var(--LColor);
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    position: relative;
+}
+.list span{
+    font-size: 25px;
+}
+button{
+    position: absolute;
+    color: var(--Other);
+    padding: 7px;
+    border-radius: 3px;
+    background-color: var(--TextColor);
+    cursor: pointer;
+}
+#icons,#btn,#opt{  
+    top: 120px;
+    position: fixed;
+}
+#sub{
+    bottom: 0;
+    left: 50%; 
+    transform: translateX(-50%); 
+}
+.save{
+    font-size: 30px;
+}
+.trash{
+    color: var(--BColor);
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+#left::-webkit-scrollbar,
+#right::-webkit-scrollbar,
+#option::-webkit-scrollbar{
+    width: 0;
+}
+

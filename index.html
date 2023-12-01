@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Emoji Generator By Javascript</h2>
+    <label class="switch">
+        <input type="checkbox" id="toggleSwitch">
+        <span class="slider"></span>
+    </label>
+    <div class="container">
+        <div id="left">
+            <button id="icons">Favorite List 💗</button>
+        </div>
+        
+        <div id="right">
+            <button id="btn">Genarate New Icon</button>
+        </div>
+
+        <div id="option">
+            <button id="opt">Catagory</button>
+            <button id="sub" onclick="submitForm()">Submit</button>
+            <form>
+                <div class="list">
+                    <input type="radio" id="emoji1" name="emoji" value="symbols">
+                    <label for="emoji1">Symbols</label><br>
+                </div>
+
+                <div class="list">
+                    <input type="radio" id="emoji2" name="emoji" value="travel and places">
+                    <label for="emoji2">Travel</label><br>
+                </div>
+                
+                <div class="list">
+                    <input type="radio" id="emoji3" name="emoji" value="face positive">
+                    <label for="emoji3">Face</label><br>
+                </div>
+                
+                <div class="list">
+                    <input type="radio" id="emoji4" name="emoji" value="animal-bird">
+                    <label for="emoji4">Animal</label>
+                </div>
+
+                <div class="list">
+                    <input type="radio" id="emoji5" name="emoji" value="food asian">
+                    <label for="emoji5">Food</label>
+                </div>
+              </form>
+        </div>
+        <p>click on the icon to copy html unicode</p>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
