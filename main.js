@@ -1,4 +1,4 @@
-let URL = "https://emojihub.yurace.pro/api/all/group/";
+let URL = "https://emojihub.yurace.pro/api/all/group/"; //base api url
 let MURL ="";
 
 const button = document.getElementById("btn");
@@ -6,7 +6,7 @@ let lists = document.getElementsByClassName("list");
 let rightBox = document.getElementById("right");
 let leftBox = document.getElementById("left");
 
-
+//catagory submitForm part
 function submitForm() {
     const selectedValue = document.querySelector('input[name="emoji"]:checked');
     if (selectedValue) {
@@ -20,6 +20,7 @@ function submitForm() {
     }
 }
 
+//Genarate button part
 button.addEventListener('click',()=>{
     fetch("https://emojihub.yurace.pro/api/random/")
     .then(x => x.json())
@@ -34,10 +35,10 @@ const saveNotes = () => {
             data.push(note.innerHTML)
         }
     )
-    localStorage.setItem("notes", JSON.stringify(data))
+    localStorage.setItem("emoji", JSON.stringify(data)) //save emoji part in localStorage as a string
 }
 
-function Genarate(data){
+function Genarate(data){ //Genarate a emoji div call note
     const note = document.createElement("div");
     note.classList.add("list");
     note.draggable = true;
@@ -58,7 +59,7 @@ function Genarate(data){
 
     note.querySelector("span").addEventListener("click", () => {
         const spanValue = note.querySelector("span").innerText;
-        navigator.clipboard.writeText(spanValue);
+        navigator.clipboard.writeText(spanValue); //copy emoji by clicking on it
         alert("Copied 👍");
     });
 
@@ -68,6 +69,8 @@ function Genarate(data){
     });
 }
 
+//All dragable Logic
+
 rightBox.addEventListener("dragover", (e) => {
     e.preventDefault();
 });
@@ -76,7 +79,7 @@ rightBox.addEventListener("drop", (e) => {
     let selected = document.querySelector(".list.dragging");
     rightBox.appendChild(selected);
     selected.classList.remove("dragging");
-    saveNotes()
+    saveNotes() //only save data in favorite list
 });
 
 leftBox.addEventListener("dragover", (e) => {
@@ -98,7 +101,7 @@ document.addEventListener("dragend", (e) => {
     e.target.classList.remove("dragging");
 });
 
-
+//switching dark mode
 document.addEventListener('DOMContentLoaded', function () {
     const toggleSwitch = document.getElementById('toggleSwitch');
     toggleSwitch.addEventListener('change', switchTheme, false);
@@ -119,6 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+//onload fetch all data that store in localstore
 (
     function() {
         const lsNotes = JSON.parse(localStorage.getItem("notes"));
