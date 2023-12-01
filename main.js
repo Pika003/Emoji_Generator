@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //onload fetch all data that store in localstore
 (
     function() {
-        const lsNotes = JSON.parse(localStorage.getItem("notes"));
+        const lsNotes = JSON.parse(localStorage.getItem("emoji"));
         lsNotes.forEach(
             (lsNote) => {
                 if(lsNote != ""){
