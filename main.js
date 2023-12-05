@@ -60,7 +60,17 @@ function Genarate(data){ //Genarate a emoji div call note
     note.querySelector("span").addEventListener("click", () => {
         const spanValue = note.querySelector("span").innerText;
         navigator.clipboard.writeText(spanValue); //copy emoji by clicking on it
-        alert("Copied 👍");
+
+        const popup = document.createElement("div");
+        popup.classList.add("popup");
+        popup.innerHTML = `
+        <h4>✅ Copied ! </h4>
+        <i class="trash fa fa-close"></i>
+        `
+        document.body.appendChild(popup);
+        setTimeout(()=>{
+            popup.remove();
+        },3000)
     });
 
     note.addEventListener("dragstart", (e) => {
@@ -146,7 +156,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     note.querySelector("span").addEventListener("click", () => {
                         const spanValue = note.querySelector("span").innerText;
                         navigator.clipboard.writeText(spanValue);
-                        alert("Copied 👍");
+                        
+                        const popup = document.createElement("div");
+                        popup.classList.add("popup");
+                        popup.innerHTML = `
+                        <h4>✅ Copied ! </h4>
+                        <i class="trash fa fa-close"></i>
+                        `
+                        document.body.appendChild(popup);
+                        setTimeout(()=>{
+                            popup.remove();
+                        },3000)
                     });               
                 
                     note.addEventListener("dragstart", (e) => {

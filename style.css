@@ -82,6 +82,18 @@ p{
     align-items: center;
     justify-content: center;
 }
+.popup{
+    height: 30px;
+    width: 200px;
+    color: var(--LColor);
+    background-color: var(--ListColor);
+    text-align: center;
+    padding-top: 3.5px;
+    position: absolute;
+    bottom: 50px;
+    right: 20px;
+    border-radius: 3px;
+}
 #left,#right,#option{
     width: 80%; 
     max-width: 400px;
